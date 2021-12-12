@@ -1,0 +1,16 @@
+<p>Lista de campeones</p>
+
+<div>
+    <h3 *ngIf="campeonBorrado;else noBorrado">Campeón borrado: <small>{{campeonBorrado}}</small></h3>
+    <ng-template #noBorrado >Héroes de DOTA 2</ng-template>
+</div>
+
+<button (click)="borrarCampeon()">
+    Borrar
+</button>
+<ul>
+    <li *ngFor="let campeon of campeones; let i = index">
+        {{campeon}} , {{i + 1}}
+    </li>
+</ul>
+
