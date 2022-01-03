@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import Personajes from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
-  styleUrls: ['./personajes.component.css']
+  // styleUrls: ['./personajes.component.css']
 })
-export class PersonajesComponent implements OnInit {
+export class PersonajesComponent{
 
-  constructor() { }
+  // @Input('data') personajes : Personajes[] = [] //estos datos vendran desde el componente padre
+  
+  constructor(private dbzService: DbzService){
+    this.dbzService.personajes
+  };
 
-  ngOnInit(): void {
-  }
-
+  public get personajes() : Personajes[] {
+    return this.dbzService.personajes;
+  };
+  
 }
