@@ -11,9 +11,7 @@ export class PersonajesComponent{
 
   // @Input('data') personajes : Personajes[] = [] //estos datos vendran desde el componente padre
   
-  constructor(private dbzService: DbzService){
-    this.dbzService.personajes
-  };
+  constructor(private dbzService: DbzService){};
 
   public get personajes() : Personajes[] {
     return this.dbzService.personajes;
