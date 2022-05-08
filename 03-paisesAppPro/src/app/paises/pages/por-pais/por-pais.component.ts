@@ -15,11 +15,13 @@ export class PorPaisComponent {
 
   constructor( private paisService: PaisService ) { }
 
-  buscar(){
+  buscar( event: string ){
     
-    if (this.termino.length < 2) {
+    if (event.length < 2) {
       return
     }
+
+    this.termino = event
 
     this.isHttpOk = true
     this.paisService.buscarPais(this.termino).subscribe( (response) =>{

@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/county-interface';
 
 @Component({
-  selector: 'app-por-region',
-  templateUrl: './por-region.component.html',
-  styleUrls: ['./por-region.component.css']
+  selector: 'app-country-table',
+  templateUrl: './country-table.component.html',
+  styleUrls: ['./country-table.component.css']
 })
-export class PorRegionComponent{
+export class CountryTableComponent {
 
   @Input() paises: Country[] = [];
 

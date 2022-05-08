@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Country } from '../../interfaces/county-interface';
 
 @Component({
   selector: 'app-por-capital',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./por-capital.component.css']
 })
 export class PorCapitalComponent implements OnInit {
+
+  @Input() paises: Country[] = [];
 
   constructor() { }
 
