@@ -13,11 +13,11 @@
     </div>
 </div>
 <hr>
-<div class="alert alert-danger">
-    <p> No se encontro el país que esta buscando...</p>
+<div *ngIf="!isHttpOk" class="alert alert-danger">
+    <p> No se encontro el país que esta buscando...<i>({{termino}})</i></p>
 </div>
 
-<div class="row">
+<div *ngIf="isHttpOk" class="row">
     <div class="col">
         <table class="table table-hover">
             <thead>
