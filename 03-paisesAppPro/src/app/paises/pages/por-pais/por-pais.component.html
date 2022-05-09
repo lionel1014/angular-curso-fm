@@ -3,7 +3,10 @@
 
 <div class="row">
     <div class="col">
-        <app-input-country (onEnter)="buscar($event)"></app-input-country>
+        <app-input-country
+            (onDebounce)="suggestion($event)"
+            (onEnter)="buscar($event)">
+        </app-input-country>
     </div>
 </div>
 <hr>

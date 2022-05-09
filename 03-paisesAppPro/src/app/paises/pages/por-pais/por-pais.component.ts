@@ -35,4 +35,8 @@ export class PorPaisComponent {
     });
   }
 
+  suggestion( termino: string){
+    this.isHttpOk = true;
+  }
+
 }
