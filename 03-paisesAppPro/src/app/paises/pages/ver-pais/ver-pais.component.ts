@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Country } from '../../interfaces/county-interface';
+import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-ver-pais',
@@ -8,11 +10,17 @@ import { Country } from '../../interfaces/county-interface';
 })
 export class VerPaisComponent implements OnInit {
 
-  @Input() paises: Country[] = [];
-
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private paisService: PaisService ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.
+      subscribe( params =>{
+        let {id} = params
+        this.paisService.buscarPaisAlpha( id )
+          .subscribe( pais =>{
+            console.log(pais);
+          })
+      })
   }
 
 }
