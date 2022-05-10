@@ -1,3 +1,22 @@
 <h2>Por Capital</h2>
 <hr>
-<app-country-table [paises]="paises"></app-country-table>
+<div class="row">
+    <div class="col">
+        <app-input-country
+            (onDebounce)="suggestion($event)"
+            (onEnter)="buscar($event)"
+            [placeholder]="'Buscar por capital...'"
+            >
+        </app-input-country>
+    </div>
+</div>
+<hr>
+<div *ngIf="!isHttpOk && termino.length > 0" class="alert alert-danger">
+    <p> No se encontro la capital que esta buscando...<i>({{termino}})</i></p>
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+        <app-country-table [paises]="paises"></app-country-table>
+    </div>
+</div>
